@@ -1,0 +1,16 @@
+{
+    "name": "dong/workopia-php",
+    "description": "Job listing application",
+    "authors": [
+      {
+        "name": "Dong",
+        "email": "20127545@tafe.wa.edu.au"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Framework\\": "Framework/",
+        "App\\": "App/"
+      }
+    }
+  }
