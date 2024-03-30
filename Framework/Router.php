@@ -9,7 +9,7 @@ if (array_key_exists($uri, $routes)) {
     require basePath($routes['404']);
 }*/
 
-class Rounter
+class Router
 {
     protected $routes = [];
 

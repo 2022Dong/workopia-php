@@ -23,13 +23,20 @@ $routes =
 //inspect($uri);
 //inspect($method);
 
-require basePath('Framework/Router.php');
-require basePath('Framework/Database.php');
+//require basePath('Framework/Router.php');
+//require basePath('Framework/Database.php');
+
+spl_autoload_register(function ($class) {
+    $path = basePath('Framework/' . $class . '.php');
+    if (file_exists($path)) {
+        require $path;
+    }
+});
 //$config = require basePath('config/db.php');
 
 //$db = new Database($config);
 
-$router = new Rounter(); // Instatiate the router
+$router = new Router(); // Instatiate the router
 
 $routes = require basePath('routes.php'); // Get routes
 
