@@ -49,7 +49,6 @@ $routes = require basePath('routes.php'); // Get routes
 //inspectAndDie($uri);
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 //inspectAndDie($uri);
-$method = $_SERVER['REQUEST_METHOD'];
 
 // Route the request
-$router->route($uri, $method);
+$router->route($uri);
