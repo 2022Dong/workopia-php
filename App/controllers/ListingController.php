@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use ErrorException;
 use Framework\Database;
+use Framework\Validation;
 
 class ListingController
 {
@@ -22,6 +23,9 @@ class ListingController
      */
     public function index()
     {
+        //inspectAndDie(Validation::string('r23', 3, 5));
+        //inspectAndDie(Validation::email('123@test.com'));
+        //inspectAndDie(Validation::match('a', 'a'));
         $listings = $this->db->query('SELECT * FROM listings')->fetchAll();
 
         loadView('listings/index', [
