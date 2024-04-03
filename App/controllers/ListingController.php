@@ -68,4 +68,18 @@ class ListingController
             'listing' => $listing
         ]);
     }
+    public function store()
+    {
+        $allowedFields = ['title', 'description', 'salary', 'requirements', 'benefits', 'company', 'address', 'city', 'state', 'phone', 'email'];
+
+        // Turn value into key. --array_flip()
+        $newListingData = array_intersect_key($_POST, array_flip($allowedFields));
+
+        $newListingData['user_id'] = 1;
+
+        $newListingData = array_map('sanitize', $newListingData);
+
+        //inspectAndDie($_POST);
+        inspectAndDie($newListingData);
+    }
 }
