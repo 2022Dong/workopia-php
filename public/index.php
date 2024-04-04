@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../helpers.php';
 
 //require '../views/home.view.php';
@@ -29,17 +30,7 @@ $routes =
 require __DIR__ . '/../vendor/autoload.php';
 
 use Framework\Router;
-/* spl_autoload_register(function ($class) {
-    $path = basePath('Framework/' . $class . '.php');
-    if (file_exists($path)) {
-        require $path;
-    }
-}); */
-//$config = require basePath('config/db.php');
 
-//$db = new Database($config);
-
-//$router = new Framework\Router(); // Instatiate the router
 $router = new Router(); // Instatiate the router
 
 $routes = require basePath('routes.php'); // Get routes
