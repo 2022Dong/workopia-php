@@ -1,6 +1,12 @@
 <?php
-session_start();
+require __DIR__ . '/../vendor/autoload.php';
+
+use Framework\Router;
+use Framework\Session;
+
+//Session::start();
 require '../helpers.php';
+//inspectAndDie(session_status());
 
 //require '../views/home.view.php';
 //require basePath('views/home.view.php');
@@ -27,9 +33,7 @@ $routes =
 //require basePath('Framework/Router.php');
 //require basePath('Framework/Database.php');
 
-require __DIR__ . '/../vendor/autoload.php';
 
-use Framework\Router;
 
 $router = new Router(); // Instatiate the router
 
